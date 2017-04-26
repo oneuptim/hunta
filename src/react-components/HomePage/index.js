@@ -1,5 +1,7 @@
 import React from 'react'
 import Typekit from 'react-typekit'
+import ProductList from '../Products/ProductList'
+import ProductItem from '../Products/ProductItem'
 
 class HomePage extends React.Component {
 	constructor () {
@@ -12,7 +14,7 @@ class HomePage extends React.Component {
 					link: 'https://codecademy.com',
 					media: '/img/codecademy.jpg',
 					upvote: 169,
-					description: 'The only thing I found in the fridge was a dead dove in a bag. So maybe you could start jete-ing, and stop je-terrorizing me! A million ****ing diamonds!',
+					description: 'The only thing I found in the fridge was a dead dove in a bag.',
 					maker: {
 						name: 'hieu',
 						avatar: '/img/hieu.jpg'
@@ -22,8 +24,8 @@ class HomePage extends React.Component {
 					id: 2,
 					name: 'Plex',
 					link: 'https://plexmedia.com',
-					media: '/img/codecademy.jpg',
-					upvote: 169,
+					media: '/img/code4startup.jpg',
+					upvote: 2059,
 					description: 'Code for startups',
 					maker: {
 						name: 'hieu',
@@ -35,11 +37,11 @@ class HomePage extends React.Component {
 					name: 'Pluralsight',
 					link: 'https://codecademy.com',
 					media: '/img/codecademy.jpg',
-					upvote: 169,
+					upvote: 21,
 					description: 'Code for anyone',
 					maker: {
 						name: 'hieu',
-						avatar: '/img/hieu.jpg'
+						avatar: '/img/kitty.png'
 					}
 				}
 			]
@@ -55,32 +57,11 @@ class HomePage extends React.Component {
 				<section>
 					<section className='container'>
 						<h1>Product List</h1>
-						<ul className='product-list'>
-							<li className='product-item'>
-								<a className='upvote-button' href='#'>
-									<span>
-										<i className='fa fa-sort-asc'></i>
-									</span>
-									<br />
-									{this.state.productList[0].upvote}
-								</a>
-								<img className='product-item-media' src={this.state.productList[0].media} />
-								<section className='product-item-info'>
-									<a href='#'>
-										<h2>{this.state.productList[0].name}</h2>
-									</a>
-									<p>{this.state.productList[0].description}</p>
-									<a href='#'>
-										<img className='small-avatar' scr={this.state.productList[0].maker.avatar} />
-									</a>
-								</section>
-								<a className='product-item-link' href={this.state.productList[0].link}>
-									<span>
-										<i className='fa fa-external-link'></i>
-									</span>
-								</a>
-							</li>
-						</ul>
+						{
+							this.state.productList
+							? <ProductList productList={this.state.productList} />
+							: null
+						}
 						<Typekit kitId='rlh2gxh' />
 					</section>
 				</section>
