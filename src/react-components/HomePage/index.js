@@ -2,7 +2,7 @@ import React from 'react'
 import Typekit from 'react-typekit'
 import ProductList from '../Products/ProductList'
 import ProductItem from '../Products/ProductItem'
-
+import NavBar from '../NavBar'
 class HomePage extends React.Component {
 	constructor () {
 		super ()
@@ -13,7 +13,7 @@ class HomePage extends React.Component {
 					name: 'Codecademy',
 					link: 'https://codecademy.com',
 					media: '/img/codecademy.jpg',
-					upvote: 169,
+					upvote: 12069,
 					description: 'The only thing I found in the fridge was a dead dove in a bag.',
 					maker: {
 						name: 'hieu',
@@ -52,10 +52,10 @@ class HomePage extends React.Component {
 		return (
 			<section>
 				<header>
-					<img src='/img/banner.jpg' width='100%' />
 				</header>
 				<section>
 					<section className='container'>
+					<NavBar />
 						<h1>Product List</h1>
 						{
 							this.state.productList

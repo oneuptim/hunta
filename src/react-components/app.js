@@ -10,7 +10,9 @@ class App extends React.Component {
 
 	render () {
 		return (
-			<HomePage />
+			<section>
+				<HomePage />
+			</section>
 		)
 	}
 }
